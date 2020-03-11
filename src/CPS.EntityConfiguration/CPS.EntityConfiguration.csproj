@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../../build/public.props" />
+  <Import Project="../../build/version.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OSharpNS.EntityFrameworkCore" Version="3.1.2-preview2.29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CPS.Core\CPS.Core.csproj" />
+  </ItemGroup>
+
+</Project>
+ 
