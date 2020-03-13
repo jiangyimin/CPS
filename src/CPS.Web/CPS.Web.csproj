@@ -14,8 +14,8 @@
     <Compile Remove="Startups\PostgreSqlDesignTimeDefaultDbContextFactory.cs" />
     <Compile Remove="Startups\SqliteDefaultDbContextMigrationPack.cs" />
     <Compile Remove="Startups\SqliteDesignTimeDefaultDbContextFactory.cs" />
-    <Compile Remove="Startups\SqlServerDefaultDbContextMigrationPack.cs" />
-    <Compile Remove="Startups\SqlServerDesignTimeDefaultDbContextFactory.cs" />
+    <Compile Remove="Startups\MySqlDefaultDbContextMigrationPack.cs" />
+    <Compile Remove="Startups\MySqlDesignTimeDefaultDbContextFactory.cs" />
   </ItemGroup>
 
   <ItemGroup>
