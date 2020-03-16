@@ -131,5 +131,15 @@
         "acl": "Root.Admin.Systems.Pack"
       }]
     }]
+  }, {
+    "text": "字典管理模块",
+    "group": "true",
+    "icon": "anticon-border",
+    "acl": "Root.Admin.Dict",
+    "children": [{
+      "text": "线路类型管理",
+      "link": "/dict/route-type",
+      "acl": "Root.Admin.Dict.RouteType"
+    }]
   }]
 }
