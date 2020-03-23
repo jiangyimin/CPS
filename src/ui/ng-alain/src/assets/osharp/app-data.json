@@ -41,16 +41,28 @@
     }, {
       "text": "字典模块",
       "group": "true",
-      "icon": "anticon-mail",
+      "icon": "anticon-file",
       "acl": "Root.Admin.Dict",
       "children": [{
-        "text": "字段输入规则管理",
+        "text": "字段输入规则",
         "link": "/dict/field-input-rule",
         "acl": "Root.Admin.Dict.FieldInputRule"
       }, {
-        "text": "线路类型管理",
+        "text": "线路类型",
         "link": "/dict/route-type",
         "acl": "Root.Admin.Dict.RouteType"
+      }, {
+        "text": "人员类别",
+        "link": "/dict/worker-category",
+        "acl": "Root.Admin.Dict.WorkerCategory"
+      }, {
+        "text": "车辆类型管理",
+        "link": "/dict/vehicle-type",
+        "acl": "Root.Admin.Dict.VehicleType"
+      }, {
+        "text": "物品类型管理",
+        "link": "/dict/article-type",
+        "acl": "Root.Admin.Dict.ArticleType"
       }]
     }]
   }, {

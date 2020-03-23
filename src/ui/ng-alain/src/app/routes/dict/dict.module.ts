@@ -16,6 +16,9 @@ import { SharedModule } from '@shared';
 import { DictRoutingModule } from './dict.routing';
 import { FieldInputRuleComponent } from './field-input-rule/field-input-rule.component';
 import { RouteTypeComponent } from './route-type/route-type.component';
+import { WorkerCategoryComponent } from './worker-category/worker-category.component';
+import { VehicleTypeComponent } from './vehicle-type/vehicle-type.component';
+import { ArticleTypeComponent } from './article-type/article-type.component';
 
 @NgModule({
   imports: [
@@ -26,6 +29,9 @@ import { RouteTypeComponent } from './route-type/route-type.component';
   declarations: [
     FieldInputRuleComponent,
     RouteTypeComponent,
+    WorkerCategoryComponent,
+    VehicleTypeComponent,
+    ArticleTypeComponent
   ]
 })
 export class DictModule { }

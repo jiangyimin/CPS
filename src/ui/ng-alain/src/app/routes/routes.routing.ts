@@ -26,12 +26,7 @@ const routes: Routes = [
 			{ path: "auth", loadChildren: () => import("./auth/auth.module").then((m) => m.AuthModule) },
 			{ path: "systems", loadChildren: () => import("./systems/systems.module").then((m) => m.SystemsModule) },
 			{ path: 'dict', loadChildren: () => import('./dict/dict.module').then(m => m.DictModule), canActivateChild: [ACLGuard], data: { guard: 'Root.Admin.Dict' } },
-			{
-				path: "infos",
-				loadChildren: () => import("./infos/infos.module").then((m) => m.InfosModule),
-				canActivateChild: [ ACLGuard ],
-				data: { guard: "Root.Admin.Infos" }
-			}
+			{ path: "infos", loadChildren: () => import("./infos/infos.module").then((m) => m.InfosModule), canActivateChild: [ ACLGuard ], data: { guard: "Root.Admin.Infos" } }
 		]
 	},
 	// 全屏布局
