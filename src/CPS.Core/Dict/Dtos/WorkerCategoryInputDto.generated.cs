@@ -4,10 +4,10 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类：可遵守如下规则进行扩展：
-//      1.横向扩展：如需添加额外的属性，可新建文件“RouteTypeInputDto.cs”的分部类“public partial class RouteTypeInputDto”}添加属性
+//      1.横向扩展：如需添加额外的属性，可新建文件“WorkerCategoryInputDto.cs”的分部类“public partial class WorkerCategoryInputDto”}添加属性
 // </auto-generated>
 //
-//  <copyright file="RouteTypeInputDto.generated.cs">
+//  <copyright file="WorkerCategoryInputDto.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -28,11 +28,11 @@ using CPS.Dict.Entities;
 namespace CPS.Dict.Dtos
 {
     /// <summary>
-    /// 输入DTO：线路类型信息
+    /// 输入DTO：人员类别信息
     /// </summary>
-    [MapTo(typeof(RouteType))]
-    [Description("线路类型信息")]
-    public partial class RouteTypeInputDto : IInputDto<int>
+    [MapTo(typeof(WorkerCategory))]
+    [Description("人员类别信息")]
+    public partial class WorkerCategoryInputDto : IInputDto<int>
     {
         /// <summary>
         /// 获取或设置 编号
@@ -43,7 +43,7 @@ namespace CPS.Dict.Dtos
         /// <summary>
         /// 获取或设置 序号
         /// </summary>
-        [DisplayName("序号"), Required, StringLength(8, MinimumLength = 2)]
+        [DisplayName("序号"), Required]
         public string Cn { get; set; }
 
         /// <summary>

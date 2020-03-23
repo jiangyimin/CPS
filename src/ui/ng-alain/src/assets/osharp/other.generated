@@ -6,6 +6,10 @@
 各模块组件路由：
 字典管理 模块组件路由数据
 { path: 'route-type', component: RouteTypeComponent, canActivate: [ACLGuard], data: { title: '线路类型管理', reuse: true, guard: 'Root.Admin.Dict.RouteType.Read' } },
+{ path: 'field-input-rule', component: FieldInputRuleComponent, canActivate: [ACLGuard], data: { title: '字段输入规则管理', reuse: true, guard: 'Root.Admin.Dict.FieldInputRule.Read' } },
+{ path: 'worker-category', component: WorkerCategoryComponent, canActivate: [ACLGuard], data: { title: '人员类别管理', reuse: true, guard: 'Root.Admin.Dict.WorkerCategory.Read' } },
+{ path: 'vehicle-type', component: VehicleTypeComponent, canActivate: [ACLGuard], data: { title: '车辆类型管理', reuse: true, guard: 'Root.Admin.Dict.VehicleType.Read' } },
+{ path: 'article-type', component: ArticleTypeComponent, canActivate: [ACLGuard], data: { title: '物品类型管理', reuse: true, guard: 'Root.Admin.Dict.ArticleType.Read' } },
 
 
 
@@ -20,6 +24,22 @@
     "text": "线路类型管理",
     "link": "/dict/route-type",
     "acl": "Root.Admin.Dict.RouteType"
+  }, {
+    "text": "字段输入规则管理",
+    "link": "/dict/field-input-rule",
+    "acl": "Root.Admin.Dict.FieldInputRule"
+  }, {
+    "text": "人员类别管理",
+    "link": "/dict/worker-category",
+    "acl": "Root.Admin.Dict.WorkerCategory"
+  }, {
+    "text": "车辆类型管理",
+    "link": "/dict/vehicle-type",
+    "acl": "Root.Admin.Dict.VehicleType"
+  }, {
+    "text": "物品类型管理",
+    "link": "/dict/article-type",
+    "acl": "Root.Admin.Dict.ArticleType"
   }]
 }
 

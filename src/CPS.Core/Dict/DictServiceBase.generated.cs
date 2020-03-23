@@ -65,6 +65,26 @@ namespace CPS.Dict
         protected IRepository<RouteType, int> RouteTypeRepository => ServiceProvider.GetService<IRepository<RouteType, int>>();
         
         /// <summary>
+        /// 获取或设置 字段输入规则信息仓储对象
+        /// </summary>
+        protected IRepository<FieldInputRule, int> FieldInputRuleRepository => ServiceProvider.GetService<IRepository<FieldInputRule, int>>();
+        
+        /// <summary>
+        /// 获取或设置 人员类别信息仓储对象
+        /// </summary>
+        protected IRepository<WorkerCategory, int> WorkerCategoryRepository => ServiceProvider.GetService<IRepository<WorkerCategory, int>>();
+        
+        /// <summary>
+        /// 获取或设置 车辆类型信息仓储对象
+        /// </summary>
+        protected IRepository<VehicleType, int> VehicleTypeRepository => ServiceProvider.GetService<IRepository<VehicleType, int>>();
+        
+        /// <summary>
+        /// 获取或设置 物品类型信息仓储对象
+        /// </summary>
+        protected IRepository<ArticleType, int> ArticleTypeRepository => ServiceProvider.GetService<IRepository<ArticleType, int>>();
+        
+        /// <summary>
         /// 获取 事件总线
         /// </summary>
         protected IEventBus EventBus => ServiceProvider.GetService<IEventBus>();

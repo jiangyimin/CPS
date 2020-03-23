@@ -4,10 +4,10 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类：可遵守如下规则进行扩展：
-//      1.横向扩展：如需添加额外的属性，可新建文件“RouteTypeOutputDto.cs”的分部类“public partial class RouteTypeOutputDto”}添加属性
+//      1.横向扩展：如需添加额外的属性，可新建文件“VehicleTypeOutputDto.cs”的分部类“public partial class VehicleTypeOutputDto”}添加属性
 // </auto-generated>
 //
-//  <copyright file="RouteTypeOutputDto.generated.cs">
+//  <copyright file="VehicleTypeOutputDto.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -27,26 +27,28 @@ using CPS.Dict.Entities;
 namespace CPS.Dict.Dtos
 {
     /// <summary>
-    /// 输入DTO：线路类型信息
+    /// 输入DTO：车辆类型信息
     /// </summary>
-    [MapFrom(typeof(RouteType))]
-    [Description("线路类型信息")]
-    public partial class RouteTypeOutputDto : IOutputDto
+    [MapFrom(typeof(VehicleType))]
+    [Description("车辆类型信息")]
+    public partial class VehicleTypeOutputDto : IOutputDto
     {
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="VehicleTypeOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto()
+        public VehicleTypeOutputDto()
         { }
 
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="VehicleTypeOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto(RouteType entity)
+        public VehicleTypeOutputDto(VehicleType entity)
         {
             Id = entity.Id;
             Cn = entity.Cn;
             Name = entity.Name;
+            Load = entity.Load;
+            Capacity = entity.Capacity;
             CreatedTime = entity.CreatedTime;
             LastUpdaterId = entity.LastUpdaterId;
             LastUpdatedTime = entity.LastUpdatedTime;
@@ -69,6 +71,18 @@ namespace CPS.Dict.Dtos
         /// </summary>
         [DisplayName("名称")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 获取或设置 载重
+        /// </summary>
+        [DisplayName("载重")]
+        public int Load { get; set; }
+
+        /// <summary>
+        /// 获取或设置 容量
+        /// </summary>
+        [DisplayName("容量")]
+        public int Capacity { get; set; }
 
         /// <summary>
         /// 获取或设置 创建时间

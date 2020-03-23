@@ -6,7 +6,7 @@
   "menu": [{
     "text": "导航菜单",
     "i18n": "menu.nav",
-    "group": true,
+    "group": false,
     "hideInBreadcrumb": true,
     "children": [{
       "text": "主页",
@@ -18,7 +18,7 @@
   }, {
     "text": "业务模块",
     "i18n": "menu.nav.business",
-    "group": true,
+    "group": false,
     "hideInBreadcrumb": true,
     "children": [{
       "text": "信息模块",
@@ -38,11 +38,25 @@
         "link": "/infos/message-reply",
         "acl": "Root.Admin.Infos.MessageReply"
       }]
+    }, {
+      "text": "字典模块",
+      "group": "true",
+      "icon": "anticon-mail",
+      "acl": "Root.Admin.Dict",
+      "children": [{
+        "text": "字段输入规则管理",
+        "link": "/dict/field-input-rule",
+        "acl": "Root.Admin.Dict.FieldInputRule"
+      }, {
+        "text": "线路类型管理",
+        "link": "/dict/route-type",
+        "acl": "Root.Admin.Dict.RouteType"
+      }]
     }]
   }, {
     "text": "权限模块",
     "i18n": "menu.nav.permission",
-    "group": true,
+    "group": false,
     "hideInBreadcrumb": true,
     "children": [{
       "text": "身份认证",
@@ -97,7 +111,7 @@
   }, {
     "text": "系统管理",
     "i18n": "menu.nav.system",
-    "group": true,
+    "group": false,
     "children": [{
       "text": "系统管理",
       "i18n": "menu.nav.system.systems",
@@ -130,16 +144,6 @@
         "link": "/systems/pack",
         "acl": "Root.Admin.Systems.Pack"
       }]
-    }]
-  }, {
-    "text": "字典管理模块",
-    "group": "true",
-    "icon": "anticon-border",
-    "acl": "Root.Admin.Dict",
-    "children": [{
-      "text": "线路类型管理",
-      "link": "/dict/route-type",
-      "acl": "Root.Admin.Dict.RouteType"
     }]
   }]
 }

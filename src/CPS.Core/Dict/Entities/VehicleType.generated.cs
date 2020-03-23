@@ -4,10 +4,10 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类：可遵守如下规则进行扩展：
-//      1.横向扩展：如需添加额外的属性，可新建文件“RouteType.cs”的分部类“public partial class RouteType”}添加属性
+//      1.横向扩展：如需添加额外的属性，可新建文件“VehicleType.cs”的分部类“public partial class VehicleType”}添加属性
 // </auto-generated>
 //
-//  <copyright file="RouteType.generated.cs">
+//  <copyright file="VehicleType.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -25,15 +25,15 @@ using OSharp.Entity;
 namespace CPS.Dict.Entities
 {
     /// <summary>
-    /// 实体类：线路类型信息
+    /// 实体类：车辆类型信息
     /// </summary>
-    [Description("线路类型信息")]
-    public partial class RouteType : EntityBase<int>, ICreatedTime, IUpdateAudited<int>
+    [Description("车辆类型信息")]
+    public partial class VehicleType : EntityBase<int>, ICreatedTime, IUpdateAudited<int>
     {
         /// <summary>
         /// 获取或设置 序号
         /// </summary>
-        [DisplayName("序号"), Required, StringLength(8, MinimumLength = 2)]
+        [DisplayName("序号"), Required]
         public string Cn { get; set; }
 
         /// <summary>
@@ -41,6 +41,18 @@ namespace CPS.Dict.Entities
         /// </summary>
         [DisplayName("名称"), Required]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 获取或设置 载重
+        /// </summary>
+        [DisplayName("载重")]
+        public int Load { get; set; }
+
+        /// <summary>
+        /// 获取或设置 容量
+        /// </summary>
+        [DisplayName("容量")]
+        public int Capacity { get; set; }
 
         /// <summary>
         /// 获取或设置 创建时间

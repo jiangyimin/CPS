@@ -48,7 +48,7 @@ export class StartupService {
 			if (!this.identity) {
 				return;
 			}
-			this.identity.tryRefreshToken();
+			// this.identity.tryRefreshToken();
 		});
 	}
 

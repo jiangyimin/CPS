@@ -71,6 +71,41 @@ namespace CPS.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Dict_FieldInputRule",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EntityName = table.Column<string>(nullable: false),
+                    FieldName = table.Column<string>(nullable: false),
+                    Regexp = table.Column<string>(nullable: false),
+                    CreatedTime = table.Column<DateTime>(nullable: false),
+                    LastUpdaterId = table.Column<int>(nullable: true),
+                    LastUpdatedTime = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dict_FieldInputRule", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Dict_RouteType",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Cn = table.Column<string>(maxLength: 8, nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    CreatedTime = table.Column<DateTime>(nullable: false),
+                    LastUpdaterId = table.Column<int>(nullable: true),
+                    LastUpdatedTime = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dict_RouteType", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Identity_Organization",
                 columns: table => new
                 {
@@ -902,6 +937,12 @@ namespace CPS.Web.Migrations
 
             migrationBuilder.DropTable(
                 name: "Auth_ModuleUser");
+
+            migrationBuilder.DropTable(
+                name: "Dict_FieldInputRule");
+
+            migrationBuilder.DropTable(
+                name: "Dict_RouteType");
 
             migrationBuilder.DropTable(
                 name: "Identity_LoginLog");

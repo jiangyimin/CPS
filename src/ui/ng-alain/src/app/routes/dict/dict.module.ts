@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared';
 import { DictRoutingModule } from './dict.routing';
+import { FieldInputRuleComponent } from './field-input-rule/field-input-rule.component';
 import { RouteTypeComponent } from './route-type/route-type.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { RouteTypeComponent } from './route-type/route-type.component';
     DictRoutingModule
   ],
   declarations: [
+    FieldInputRuleComponent,
     RouteTypeComponent,
   ]
 })

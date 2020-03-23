@@ -4,10 +4,10 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类：可遵守如下规则进行扩展：
-//      1.横向扩展：如需添加额外的属性，可新建文件“RouteTypeOutputDto.cs”的分部类“public partial class RouteTypeOutputDto”}添加属性
+//      1.横向扩展：如需添加额外的属性，可新建文件“FieldInputRuleOutputDto.cs”的分部类“public partial class FieldInputRuleOutputDto”}添加属性
 // </auto-generated>
 //
-//  <copyright file="RouteTypeOutputDto.generated.cs">
+//  <copyright file="FieldInputRuleOutputDto.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -27,26 +27,27 @@ using CPS.Dict.Entities;
 namespace CPS.Dict.Dtos
 {
     /// <summary>
-    /// 输入DTO：线路类型信息
+    /// 输入DTO：字段输入规则信息
     /// </summary>
-    [MapFrom(typeof(RouteType))]
-    [Description("线路类型信息")]
-    public partial class RouteTypeOutputDto : IOutputDto
+    [MapFrom(typeof(FieldInputRule))]
+    [Description("字段输入规则信息")]
+    public partial class FieldInputRuleOutputDto : IOutputDto
     {
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="FieldInputRuleOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto()
+        public FieldInputRuleOutputDto()
         { }
 
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="FieldInputRuleOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto(RouteType entity)
+        public FieldInputRuleOutputDto(FieldInputRule entity)
         {
             Id = entity.Id;
-            Cn = entity.Cn;
-            Name = entity.Name;
+            EntityName = entity.EntityName;
+            FieldName = entity.FieldName;
+            Regexp = entity.Regexp;
             CreatedTime = entity.CreatedTime;
             LastUpdaterId = entity.LastUpdaterId;
             LastUpdatedTime = entity.LastUpdatedTime;
@@ -59,16 +60,22 @@ namespace CPS.Dict.Dtos
         public int Id { get; set; }
 
         /// <summary>
-        /// 获取或设置 序号
+        /// 获取或设置 实体名称
         /// </summary>
-        [DisplayName("序号")]
-        public string Cn { get; set; }
+        [DisplayName("实体名称")]
+        public string EntityName { get; set; }
 
         /// <summary>
-        /// 获取或设置 名称
+        /// 获取或设置 字段名称
         /// </summary>
-        [DisplayName("名称")]
-        public string Name { get; set; }
+        [DisplayName("字段名称")]
+        public string FieldName { get; set; }
+
+        /// <summary>
+        /// 获取或设置 正则表达式
+        /// </summary>
+        [DisplayName("正则表达式")]
+        public string Regexp { get; set; }
 
         /// <summary>
         /// 获取或设置 创建时间

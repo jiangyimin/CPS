@@ -3,11 +3,11 @@
 //     这个文件只生成一次，再次生成不会被覆盖。
 //  </once-generated>
 //
-//  <copyright file="route-type.module.ts">
+//  <copyright file="vehicle-type.module.ts">
 //      
 //  </copyright>
 //  <site></site>
-//  <last-editor></last-editor>
+//  <last-editor>Jiangyimin</last-editor>
 // -----------------------------------------------------------------------
 
 import { Component, OnInit, Injector } from '@angular/core';
@@ -16,15 +16,15 @@ import { OsharpSTColumn } from '@shared/osharp/services/alain.types';
 import { STComponentBase } from '@shared/osharp/components/st-component-base';
 
 @Component({
-  selector: 'app-route-type',
-  templateUrl: './route-type.component.html',
+  selector: 'app-vehicle-type',
+  templateUrl: './vehicle-type.component.html',
   styles: []
 })
-export class RouteTypeComponent extends STComponentBase implements OnInit {
+export class VehicleTypeComponent extends STComponentBase implements OnInit {
 
   constructor(injector: Injector) {
     super(injector);
-    this.moduleName = 'routeType';
+    this.moduleName = 'vehicleType';
   }
 
   ngOnInit() {
@@ -36,15 +36,19 @@ export class RouteTypeComponent extends STComponentBase implements OnInit {
       {
         title: '操作', fixed: 'left', width: 65, buttons: [{
           text: '操作', children: [
-            { text: '编辑', icon: 'edit', acl: 'Root.Admin.Dict.RouteType.Update', click: row => this.edit(row) },
-            { text: '删除', icon: 'delete', type: 'del', acl: 'Root.Admin.Dict.RouteType.Delete', click: row => this.delete(row) },
+            { text: '编辑', icon: 'edit', acl: 'Root.Admin.Dict.VehicleType.Update', click: row => this.edit(row) },
+            { text: '删除', icon: 'delete', type: 'del', acl: 'Root.Admin.Dict.VehicleType.Delete', click: row => this.delete(row) },
           ]
         }]
       },
       { title: '编号', index: 'Id', sort: true, readOnly: true, editable: true, filterable: true, ftype: 'number' },
-      { title: '序号', index: 'Cn', sort: true, editable: true, filterable: true, ftype: 'string', pattern: '^[0-9]{2,8}$' },
-      { title: '名称', index: 'Name', sort: true, editable: true, filterable: true, ftype: 'string' },
+      { title: '序号', index: 'Cn', sort: true, editable: true, ftype: 'string' },
+      { title: '名称', index: 'Name', editable: true, ftype: 'string' },
+      { title: '载重', index: 'Load', editable: true, type: 'number' },
+      { title: '容量', index: 'Capacity', editable: true, type: 'number' },
       { title: '创建时间', index: 'CreatedTime', sort: true, filterable: true, type: 'date' },
+      { title: '更新者', index: 'LastUpdaterId', type: 'number' },
+      { title: '更新时间', index: 'LastUpdatedTime', type: 'date' },
     ];
     return columns;
   }
@@ -52,7 +56,7 @@ export class RouteTypeComponent extends STComponentBase implements OnInit {
   protected GetSFSchema(): SFSchema {
     let schema: SFSchema = {
       properties: this.ColumnsToSchemas(this.columns),
-      required: ['Cn', 'Name']
+      required: ['Cn', 'Name', 'Load', 'Capacity']
     };
     return schema;
   }

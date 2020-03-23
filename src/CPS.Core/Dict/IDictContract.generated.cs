@@ -72,5 +72,161 @@ namespace CPS.Dict
 
         #endregion
         
+        #region 字段输入规则信息业务
+
+        /// <summary>
+        /// 获取 字段输入规则信息查询数据集
+        /// </summary>
+        IQueryable<FieldInputRule> FieldInputRules { get; }
+
+        /// <summary>
+        /// 检查字段输入规则信息信息是否存在
+        /// </summary>
+        /// <param name="predicate">检查谓语表达式</param>
+        /// <param name="id">更新的字段输入规则信息编号</param>
+        /// <returns>字段输入规则信息是否存在</returns>
+        Task<bool> CheckFieldInputRuleExists(Expression<Func<FieldInputRule, bool>> predicate, int id = default(int));
+        
+        /// <summary>
+        /// 添加字段输入规则信息信息
+        /// </summary>
+        /// <param name="dtos">要添加的字段输入规则信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> CreateFieldInputRules(params FieldInputRuleInputDto[] dtos);
+            
+        /// <summary>
+        /// 更新字段输入规则信息信息
+        /// </summary>
+        /// <param name="dtos">包含更新信息的字段输入规则信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> UpdateFieldInputRules(params FieldInputRuleInputDto[] dtos);
+            
+        /// <summary>
+        /// 删除字段输入规则信息信息
+        /// </summary>
+        /// <param name="ids">要删除的字段输入规则信息编号</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> DeleteFieldInputRules(params int[] ids);
+        
+
+        #endregion
+        
+        #region 人员类别信息业务
+
+        /// <summary>
+        /// 获取 人员类别信息查询数据集
+        /// </summary>
+        IQueryable<WorkerCategory> WorkerCategories { get; }
+
+        /// <summary>
+        /// 检查人员类别信息信息是否存在
+        /// </summary>
+        /// <param name="predicate">检查谓语表达式</param>
+        /// <param name="id">更新的人员类别信息编号</param>
+        /// <returns>人员类别信息是否存在</returns>
+        Task<bool> CheckWorkerCategoryExists(Expression<Func<WorkerCategory, bool>> predicate, int id = default(int));
+        
+        /// <summary>
+        /// 添加人员类别信息信息
+        /// </summary>
+        /// <param name="dtos">要添加的人员类别信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> CreateWorkerCategories(params WorkerCategoryInputDto[] dtos);
+            
+        /// <summary>
+        /// 更新人员类别信息信息
+        /// </summary>
+        /// <param name="dtos">包含更新信息的人员类别信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> UpdateWorkerCategories(params WorkerCategoryInputDto[] dtos);
+            
+        /// <summary>
+        /// 删除人员类别信息信息
+        /// </summary>
+        /// <param name="ids">要删除的人员类别信息编号</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> DeleteWorkerCategories(params int[] ids);
+        
+
+        #endregion
+        
+        #region 车辆类型信息业务
+
+        /// <summary>
+        /// 获取 车辆类型信息查询数据集
+        /// </summary>
+        IQueryable<VehicleType> VehicleTypes { get; }
+
+        /// <summary>
+        /// 检查车辆类型信息信息是否存在
+        /// </summary>
+        /// <param name="predicate">检查谓语表达式</param>
+        /// <param name="id">更新的车辆类型信息编号</param>
+        /// <returns>车辆类型信息是否存在</returns>
+        Task<bool> CheckVehicleTypeExists(Expression<Func<VehicleType, bool>> predicate, int id = default(int));
+        
+        /// <summary>
+        /// 添加车辆类型信息信息
+        /// </summary>
+        /// <param name="dtos">要添加的车辆类型信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> CreateVehicleTypes(params VehicleTypeInputDto[] dtos);
+            
+        /// <summary>
+        /// 更新车辆类型信息信息
+        /// </summary>
+        /// <param name="dtos">包含更新信息的车辆类型信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> UpdateVehicleTypes(params VehicleTypeInputDto[] dtos);
+            
+        /// <summary>
+        /// 删除车辆类型信息信息
+        /// </summary>
+        /// <param name="ids">要删除的车辆类型信息编号</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> DeleteVehicleTypes(params int[] ids);
+        
+
+        #endregion
+        
+        #region 物品类型信息业务
+
+        /// <summary>
+        /// 获取 物品类型信息查询数据集
+        /// </summary>
+        IQueryable<ArticleType> ArticleTypes { get; }
+
+        /// <summary>
+        /// 检查物品类型信息信息是否存在
+        /// </summary>
+        /// <param name="predicate">检查谓语表达式</param>
+        /// <param name="id">更新的物品类型信息编号</param>
+        /// <returns>物品类型信息是否存在</returns>
+        Task<bool> CheckArticleTypeExists(Expression<Func<ArticleType, bool>> predicate, int id = default(int));
+        
+        /// <summary>
+        /// 添加物品类型信息信息
+        /// </summary>
+        /// <param name="dtos">要添加的物品类型信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> CreateArticleTypes(params ArticleTypeInputDto[] dtos);
+            
+        /// <summary>
+        /// 更新物品类型信息信息
+        /// </summary>
+        /// <param name="dtos">包含更新信息的物品类型信息DTO信息</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> UpdateArticleTypes(params ArticleTypeInputDto[] dtos);
+            
+        /// <summary>
+        /// 删除物品类型信息信息
+        /// </summary>
+        /// <param name="ids">要删除的物品类型信息编号</param>
+        /// <returns>业务操作结果</returns>
+        Task<OperationResult> DeleteArticleTypes(params int[] ids);
+        
+
+        #endregion
+        
     }
 }

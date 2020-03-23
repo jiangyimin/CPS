@@ -4,11 +4,11 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类，可以遵守如下规则进行扩展：
-//      1.横向扩展：如需给当前控制器添加API，请在控制器类型 RouteTypeController.cs 进行添加
-//      2.纵向扩展：如需要重写当前控制器的API实现，请在控制器类型 RouteTypeController.cs 进行继承重写
+//      1.横向扩展：如需给当前控制器添加API，请在控制器类型 WorkerCategoryController.cs 进行添加
+//      2.纵向扩展：如需要重写当前控制器的API实现，请在控制器类型 WorkerCategoryController.cs 进行继承重写
 // </auto-generated>
 //
-//  <copyright file="RouteTypeBase.generated.cs">
+//  <copyright file="WorkerCategoryBase.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -42,16 +42,16 @@ using CPS.Dict.Entities;
 namespace CPS.Web.Areas.Admin.Controllers
 {
     /// <summary>
-    /// 管理控制器基类: 线路类型信息
+    /// 管理控制器基类: 人员类别信息
     /// </summary>
     [ModuleInfo(Position = "Dict", PositionName = "字典管理模块")]
-    [Description("管理-线路类型信息")]
-    public abstract class RouteTypeControllerBase : AdminApiController
+    [Description("管理-人员类别信息")]
+    public abstract class WorkerCategoryControllerBase : AdminApiController
     {
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeController"/>类型的新实例
+        /// 初始化一个<see cref="WorkerCategoryController"/>类型的新实例
         /// </summary>
-        protected RouteTypeControllerBase(IDictContract dictContract,
+        protected WorkerCategoryControllerBase(IDictContract dictContract,
             IFilterService filterService)
         {
             DictContract = dictContract;
@@ -69,61 +69,61 @@ namespace CPS.Web.Areas.Admin.Controllers
         protected IDictContract DictContract { get; }
         
         /// <summary>
-        /// 读取线路类型列表信息
+        /// 读取人员类别列表信息
         /// </summary>
         /// <param name="request">页请求信息</param>
-        /// <returns>线路类型列表分页信息</returns>
+        /// <returns>人员类别列表分页信息</returns>
         [HttpPost]
         [ModuleInfo]
         [Description("读取")]
-        public virtual PageData<RouteTypeOutputDto> Read(PageRequest request)
+        public virtual PageData<WorkerCategoryOutputDto> Read(PageRequest request)
         {
             Check.NotNull(request, nameof(request));
 
-            Expression<Func<RouteType, bool>> predicate = FilterService.GetExpression<RouteType>(request.FilterGroup);
-            var page = DictContract.RouteTypes.ToPage<RouteType, RouteTypeOutputDto>(predicate, request.PageCondition);
+            Expression<Func<WorkerCategory, bool>> predicate = FilterService.GetExpression<WorkerCategory>(request.FilterGroup);
+            var page = DictContract.WorkerCategories.ToPage<WorkerCategory, WorkerCategoryOutputDto>(predicate, request.PageCondition);
 
             return page.ToPageData();
         }
         
         /// <summary>
-        /// 新增线路类型信息
+        /// 新增人员类别信息
         /// </summary>
-        /// <param name="dtos">线路类型信息输入DTO</param>
+        /// <param name="dtos">人员类别信息输入DTO</param>
         /// <returns>JSON操作结果</returns>
         [HttpPost]
         [ModuleInfo]
         [DependOnFunction("Read")]
         [ServiceFilter(typeof(UnitOfWorkAttribute))]
         [Description("新增")]
-        public virtual async Task<AjaxResult> Create(RouteTypeInputDto[] dtos)
+        public virtual async Task<AjaxResult> Create(WorkerCategoryInputDto[] dtos)
         {
             Check.NotNull(dtos, nameof(dtos));
-            OperationResult result = await DictContract.CreateRouteTypes(dtos);
+            OperationResult result = await DictContract.CreateWorkerCategories(dtos);
             return result.ToAjaxResult();
         }
         
         /// <summary>
-        /// 更新线路类型信息
+        /// 更新人员类别信息
         /// </summary>
-        /// <param name="dtos">线路类型信息输入DTO</param>
+        /// <param name="dtos">人员类别信息输入DTO</param>
         /// <returns>JSON操作结果</returns>
         [HttpPost]
         [ModuleInfo]
         [DependOnFunction("Read")]
         [ServiceFilter(typeof(UnitOfWorkAttribute))]
         [Description("更新")]
-        public virtual async Task<AjaxResult> Update(RouteTypeInputDto[] dtos)
+        public virtual async Task<AjaxResult> Update(WorkerCategoryInputDto[] dtos)
         {
             Check.NotNull(dtos, nameof(dtos));
-            OperationResult result = await DictContract.UpdateRouteTypes(dtos);
+            OperationResult result = await DictContract.UpdateWorkerCategories(dtos);
             return result.ToAjaxResult();
         }
         
         /// <summary>
-        /// 删除线路类型信息
+        /// 删除人员类别信息
         /// </summary>
-        /// <param name="ids">线路类型信息编号</param>
+        /// <param name="ids">人员类别信息编号</param>
         /// <returns>JSON操作结果</returns>
         [HttpPost]
         [ModuleInfo]
@@ -133,7 +133,7 @@ namespace CPS.Web.Areas.Admin.Controllers
         public virtual async Task<AjaxResult> Delete(int[] ids)
         {
             Check.NotNull(ids, nameof(ids));
-            OperationResult result = await DictContract.DeleteRouteTypes(ids);
+            OperationResult result = await DictContract.DeleteWorkerCategories(ids);
             return result.ToAjaxResult();
         }
     }

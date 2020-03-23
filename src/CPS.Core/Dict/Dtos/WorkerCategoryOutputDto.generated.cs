@@ -4,10 +4,10 @@
 //    手动更改此文件可能导致应用程序出现意外的行为。
 //    如果重新生成代码，对此文件的任何修改都会丢失。
 //    如果需要扩展此类：可遵守如下规则进行扩展：
-//      1.横向扩展：如需添加额外的属性，可新建文件“RouteTypeOutputDto.cs”的分部类“public partial class RouteTypeOutputDto”}添加属性
+//      1.横向扩展：如需添加额外的属性，可新建文件“WorkerCategoryOutputDto.cs”的分部类“public partial class WorkerCategoryOutputDto”}添加属性
 // </auto-generated>
 //
-//  <copyright file="RouteTypeOutputDto.generated.cs">
+//  <copyright file="WorkerCategoryOutputDto.generated.cs">
 //      
 //  </copyright>
 //  <site></site>
@@ -27,22 +27,22 @@ using CPS.Dict.Entities;
 namespace CPS.Dict.Dtos
 {
     /// <summary>
-    /// 输入DTO：线路类型信息
+    /// 输入DTO：人员类别信息
     /// </summary>
-    [MapFrom(typeof(RouteType))]
-    [Description("线路类型信息")]
-    public partial class RouteTypeOutputDto : IOutputDto
+    [MapFrom(typeof(WorkerCategory))]
+    [Description("人员类别信息")]
+    public partial class WorkerCategoryOutputDto : IOutputDto
     {
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="WorkerCategoryOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto()
+        public WorkerCategoryOutputDto()
         { }
 
         /// <summary>
-        /// 初始化一个<see cref="RouteTypeOutputDto"/>类型的新实例
+        /// 初始化一个<see cref="WorkerCategoryOutputDto"/>类型的新实例
         /// </summary>
-        public RouteTypeOutputDto(RouteType entity)
+        public WorkerCategoryOutputDto(WorkerCategory entity)
         {
             Id = entity.Id;
             Cn = entity.Cn;

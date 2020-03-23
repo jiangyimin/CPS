@@ -10,8 +10,8 @@ using OSharp.Entity;
 namespace CPS.Web.Migrations
 {
     [DbContext(typeof(DefaultDbContext))]
-    [Migration("20200316040416_dict")]
-    partial class dict
+    [Migration("20200323031316_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -204,6 +204,39 @@ namespace CPS.Web.Migrations
                     b.ToTable("Auth_ModuleUser");
                 });
 
+            modelBuilder.Entity("CPS.Dict.Entities.FieldInputRule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EntityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FieldName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastUpdatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("LastUpdaterId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Regexp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dict_FieldInputRule");
+                });
+
             modelBuilder.Entity("CPS.Dict.Entities.RouteType", b =>
                 {
                     b.Property<int>("Id")
@@ -211,12 +244,27 @@ namespace CPS.Web.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Cn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(8)")
+                        .HasMaxLength(8);
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("LastUpdatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("LastUpdaterId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RouteType");
+                    b.ToTable("Dict_RouteType");
                 });
 
             modelBuilder.Entity("CPS.Identity.Entities.LoginLog", b =>
